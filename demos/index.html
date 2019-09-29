@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>jQuery.open-toggle | Demo</title>
+    <style>
+      .open-toggle {
+        margin-bottom: 20px;
+        font-size: 25px;
+        background: red;
+      }
+      .open-toggle.open {
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="open-toggle no-self-toggle">
+      <span>Div 1</span>
+    </div>
+    <div class="open-toggle open">Div 2</div>
+    <div class="open-toggle">Div 3</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/jquery.open-toggle.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".open-toggle").openToggle();
+      });
+    </script>
+  </body>
+</html>
