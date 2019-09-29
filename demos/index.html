@@ -5,29 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>jQuery.open-toggle | Demo</title>
-    <style>
-      .open-toggle {
-        margin-bottom: 20px;
-        font-size: 25px;
-        background: red;
-      }
-      .open-toggle.open {
-        background: green;
-      }
-    </style>
+    <!-- Bootstrap 3.4.1 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+
+    <!-- Material icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,600,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/rainbow.theme.github.css" />
+    <!-- Style.css -->
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="open-toggle no-self-toggle">
-      <span>Div 1</span>
-    </div>
-    <div class="open-toggle open">Div 2</div>
-    <div class="open-toggle">Div 3</div>
+    <nav>
+      <div class="container">
+        <a class="brand-logo" href="/">open-toggle</a>
+        <div
+          class="dropdown-container float-right page-open-toggle no-self-toggle"
+        >
+          <a href="javascript:void(0)" class="btn-menu material-icons">
+            apps
+          </a>
+          <div class="dropdown-box nav-links">
+            <a href="#demos">Demos</a>
+            <a href="#usage">Usage</a>
+            <a href="#options">Options</a>
+            <a href="https://github.com/htshah/jquery.open-toggle" target="_blank">View on github</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Intro section -->
+      <section class="section">
+        <div class="container">
+          <h3 class="section-title">Intro</h3>
+          <p class="section-content">
+            <b>open-toggle</b> is a <i>jQuery</i> plugin that makes sure that
+            only one element has (user-defined)open class at a time amongst the selected elements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Demos section -->
+      <section id="demos" class="section">
+        <div class="container">
+          <h3 class="section-title">Demo</h3>
+          <div class="section-content">
+            <!-- Basic demo -->
+            <div class="demo-section">
+              <div class="demo-header">
+                <div class="demo-title">Basic</div>
+                <div class="demo-subtitle">
+                  You can even have a default opened element by just adding
+                  <b>open</b> or user-defined class to that element!
+                </div>
+              </div>
+              <div class="demo-content">
+                <div class="demo-code clearfix">
+                  <!-- Button 1 -->
+                  <div class="dropdown-container left-aligned">
+                    <a
+                      href="javascript:void(0)"
+                      class="btn btn-primary basic-open-toggle"
+                    >
+                      Button 1
+                    </a>
+                    <div class="dropdown-box nav-links">
+                      <a href="#1">Link 1</a>
+                      <a href="#2">Link 2</a>
+                    </div>
+                  </div>
+                  <!-- Button 2 -->
+                  <div class="dropdown-container left-aligned">
+                    <a
+                      href="javascript:void(0)"
+                      class="btn btn-primary basic-open-toggle"
+                    >
+                      Button 2
+                    </a>
+                    <div class="dropdown-box nav-links">
+                      <a href="#1">Link 1</a>
+                      <a href="#2">Link 2</a>
+                    </div>
+                  </div>
+                  <!-- Button 3 -->
+                  <div class="dropdown-container left-aligned">
+                    <a
+                      href="javascript:void(0)"
+                      class="btn btn-primary basic-open-toggle"
+                    >
+                      Button 3
+                    </a>
+                    <div class="dropdown-box nav-links">
+                      <a href="#1">Link 1</a>
+                      <a href="#2">Link 2</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Usage section -->
+      <section id="usage" class="section">
+        <div class="container">
+          <h3 class="section-title">Usage</h3>
+          <div class="section-content">
+            <p><b>Download</b> the plugin and add it to the page.</p>
+            <pre><code data-language="html">
+&lt;script src="/path/to/jquery.open-toggle.min.js"&gt;&lt;/script&gt;
+            </code></pre>
+
+            <p>Add some HTML elements to the page.</p>
+            <pre><code data-language="html">
+<div class="open-toggle"></div>
+<h3 class="open-toggle"></h3>
+<div class="open-toggle"></div>
+            </code></pre>
+
+            <p>Add the following script at the end of the &lt;body&gt; tag.</p>
+            <pre><code data-language="html">
+&lt;script&gt;
+  $(document).ready(function(){
+    $(".open-toggle").openToggle();
+  });
+&lt;/script&gt;
+            </code></pre>
+
+            <p>
+              <b>Thats it!</b> This plugin will make sure that only one element
+              has open class.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Options section -->
+      <section id="options" class="section">
+        <div class="container">
+          <div class="section-title">Options</div>
+          <div class="section-content">
+            <h4 style="text-align: center">
+              $( <i>selector</i> ).openToggle( <i>&lt;className&gt;</i> );
+            </h4>
+            <p>
+              <div><b>selector</b></div>
+              Defines which element are to be considered by this plugin.
+            </p>
+            <p>
+              <div><b>className - Optional. Default: <i>open</i></b></div>
+              Defines the class name that is to be added to element when it is clicked(opened).
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="clearfix">
+          <div class="footer-left float-left"><b>Het Shah</b></div>
+          <div class="footer-right float-right">
+            <a class="icon" href="https://github.com/htshah" target="_blank">
+              <img src="./img/github.png" alt="Follow me on github." />
+            </a>
+            <a class="icon" href="https://instagram.com/htshah" target="_blank">
+              <img src="./img/instagram.png" alt="Follow me on instagram." />
+            </a>
+            <a class="icon" href="https://www.linkedin.com/in/htshah" target="_blank">
+              <img src="./img/linkedin.png" alt="Connect with me on linkedin." />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Google analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-148986426-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-148986426-1");
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/rainbow-custom.min.js"></script>
+    <script src="./js/jquery.open-toggle.js"></script>
     <script src="/jquery.open-toggle.js"></script>
     <script>
       $(document).ready(function() {
-        $(".open-toggle").openToggle();
+        $(".page-open-toggle").openToggle();
+        $(".basic-open-toggle").openToggle();
       });
     </script>
   </body>
