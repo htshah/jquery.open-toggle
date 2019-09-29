@@ -12,7 +12,7 @@
     var wasClicked = false,
       that = this;
 
-    this.click(function(e) {
+    that.click(function(e) {
       wasClicked = true;
       var ele = $(this);
       that.not(ele).removeClass(className);

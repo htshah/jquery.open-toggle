@@ -1,5 +1,5 @@
 # jquery.open-toggle
-A lightweight library to make sure that only one element has **.open** or any other user-defined class in the document at a time. It adds **.open** or any other user-defined class-name to the *open-toggle element* which is clicked and removes **.open** from the remaining *open-toggle elements*. Clicking on any other elements in the document will lead to no **.open** class to any of the *open-toggle elements*.
+**open-toggle** is a *jQuery* plugin that makes sure that only one element has (user-defined)open class at a time amongst the selected elements.
 
 ## Installation
 1. Download the JS file for the plugin.
@@ -25,10 +25,10 @@ A lightweight library to make sure that only one element has **.open** or any ot
 
     <script type="text/javascript" src="/path/to/jquery.open-toggle.min.js"></script>
     <script>
-        $('.my-open-toggle').clickToggle();
+        $('.my-open-toggle').openToggle();
 
         // Or with custom open class
-        $('.my-open-toggle-custom').clickToggle('custom-open-class');
+        $('.my-open-toggle-custom').openToggle('custom-open-class');
     </script>
 </body>
 </html>
