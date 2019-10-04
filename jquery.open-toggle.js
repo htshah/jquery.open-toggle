@@ -8,7 +8,8 @@
  * https://github.com/htshah
  */
 (function($) {
-  $.fn.openToggle = function(className = "open") {
+  $.fn.openToggle = function(className) {
+    className = className || "open";
     var wasClicked = false,
       that = this;
 
